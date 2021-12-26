@@ -1,0 +1,7 @@
+div {
+  border: 1px solid red;
+  height: 100px;
+  /* width: 100%; 기본적으로 있는 속성*/
+  margin: 50px;
+  /* 너비갓은 기본적으로 100퍼 기본적으로 세로배치  */
+}
