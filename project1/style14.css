@@ -1,0 +1,38 @@
+.tab-inner {
+  width: 400px;
+}
+.btn span { 
+  background-color: #ddd;
+  width: 120px;
+  display: inline-block; /* span은 인라인 요소이기 때문에 크기값을 못준다. display: block을 하게되면 크기 값을 줄 수 있으나 줄이 바뀌기 때문에 display: inline-block사용. */
+  text-align: center;
+  padding: 5px; /* text하고 border간격 띄우기 */
+  border-radius: 5px 5px 0 0; /* 상우하좌 */
+  cursor: pointer; /* a태그가 아닌 것에 강제로 손가락이 나오게 하는 css속성 */
+  border: 1px solid #000;
+  margin-right: -7px; /* 마진을 밀어내는게 아니라 땡기기 */
+}
+/* 몇개가 있던 상관없이 첫번째 나온 것만 체크. 괄호x
+btn 밑에 span이 있는데 그중에서 첫번째라는 의미. */
+.btn span:first-child {
+  background-color: #fff;
+}
+/* 몇개가 있던 상관없이 마지막 나온 것만 체크 */
+.btn span:last-child {
+  color: red;
+}
+.tab {
+  border: 1px solid #000;
+}
+/* a태그의 border-bottom만들기 */
+.tab a { 
+  display: block; /* a태그는 인라인요소.. 따라서 한줄에 여러개 태그 존재. */
+  color: #333;
+  text-decoration: none; /* 밑줄 없애기 */
+  margin: 5px;
+  border-bottom: 1px solid #000;
+}
+/* a태그의 lastchild 가상 클래스를 사용하여 마지막 a태그의 border-bottom을 없애기 */
+.tab a:last-child {
+  border-bottom: none;
+}

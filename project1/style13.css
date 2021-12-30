@@ -1,0 +1,39 @@
+.box {
+  border: 5px solid #000;
+  text-align: center; /* 자식요소의 inline요소가 있기 때문에 적용됨 */
+}
+.box div {
+  border: 5px solid #000;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  display: inline-block; /* 인라인 성질이 있기때문에 가로배치가 되고, 블록 성질이 있기때문에 크기 값도 유지가능. */
+}
+/* nth-child (정해져 있지 않은 순서를 정하는 가상 클래스)
+- 태그를 체크하지 않는다. */
+.box div:nth-child(1) {
+  background-color: dodgerblue;
+}
+.box div:nth-child(2) {
+  background-color: red;
+}
+.box div:nth-child(3) {
+  background-color: #fff;
+}
+.box div:nth-child(4) {
+  background-color: gold;
+}
+/* nth-of-type (순서를 체크하는 가상 클래스) 
+- 태그를 체크한다. div 중에서 처음 나오는 것부터.*/
+/* .box div:nth-of-type(1) {
+  background-color: dodgerblue;
+}
+.box div:nth-of-type(2) {
+  background-color: red;
+}
+.box div:nth-of-type(3) {
+  background-color: #fff;
+}
+.box div:nth-of-type(4) {
+  background-color: gold;
+} */
