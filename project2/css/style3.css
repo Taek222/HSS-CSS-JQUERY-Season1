@@ -1,0 +1,90 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?fammily=Raleway&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  font-weight: 300;
+  background-color: #333;
+  display: flex; /* 센터링 */
+  justify-content: center; /* 수평중앙 */
+  align-items: center; /* 수직중앙 */
+  height: 100vh;
+}
+a {
+  text-decoration: none;
+}
+/* square있고 그 square밑에 span존재 하나 만들고 똑같이 적용 */
+.square {
+  width: 400px;
+  height: 400px;
+  position: relative; /* 부모요소 */
+}
+.square span {
+  position: absolute; /* 자식요소 */
+  width: 100%; /* inherit */ 
+  height: 100%;
+  border: 1px solid #fff;
+  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%; /* '/'를 통해서 보더 레디어스를 중첩해서 사용 */
+  transition: 0.5s; /*애니메이션 때문에 주는게 아니라 마우스가 올라갔을때 백그라운드 컬러가 변경되도록 주는 것. */
+}
+/* 겹치는 느낌을 내기위해 속도를 다르게 주고 딜레이 없이 ntn-child를 이용해서 개별적으로 애니메이션 주기 */
+/* 여기에 opacity를 작성시 의도한 디자인이 나오지 않음 처음에는 border가 명확히 보이는 상태에서 마우스가 올라갔을때 개별적으로 달라지는 디자인. */
+.square span:nth-child(1) {
+  animation: circle 6s linear infinite;
+  
+}
+.square span:nth-child(2) {
+  animation: circle 4s linear infinite;
+  animation-direction: reverse; /* 시계 반대 방향으로 돌게하기. 직관적으로 이해하기 쉽게 따로 작성 */
+}
+.square span:nth-child(3) {
+  animation: circle 10s linear infinite;
+}
+/* 스퀘어에 마우스가 올라가면 자식요소인 span칼라를 변경하기 */
+.square:hover span {
+  background-color: crimson;
+  border: none;
+}
+/* 마우스가 올라갔을때 조금더 자연스러운 백그라운드 컬러 형성 */
+.square:hover span:nth-child(1) { 
+  /* background-color: crimson; */
+  opacity: 0.3;
+}
+.square:hover span:nth-child(2) {
+  /* background-color: dodgerblue; */
+  opacity: 0.6;
+}
+.square:hover span:nth-child(3) {
+  /* background-color: yellowgreen; */
+  opacity: 0.8;
+}
+
+.square div { /* 스케워 밑에 div */
+  /* border: 1px solid red; */
+  position: absolute; /* square부모요소 div자식요소 */
+  /* 정중앙 배치 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%; /* div가 포지션 속성을 갖게되니 inline-block이 됨 그래서 크기값 따로 지정가능 */
+  text-align: center;
+  color: #fff;
+}
+.square div a { /* 스퀘어 밑에 div 밑에 a태그 */
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%; /* 똑같이 찌그러뜨리기 */
+  padding: 8px;
+}
+
+/* 애니메이션 */
+@keyframes circle {
+  0% {
+    transform: rotate(0); 
+  }
+  100% {
+    transform: rotate(360deg); /* 시계 방향으로 360도 돌리기 */
+  }
+}

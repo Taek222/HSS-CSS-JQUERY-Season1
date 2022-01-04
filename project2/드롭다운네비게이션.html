@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>DropDow Navigation</title>
+  <style>
+    /* 부모요소 클릭시 숨겨져 있던 자식요소 드롭다운 하기. */
+    /* Google Web Fonts CDN */
+    @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=sway');
+    
+    /* 기본적인 body서식 */
+    body { 
+      font-family: 'Noto Sans KR', sans-serif;
+      color: #222;
+      line-height: 1.5em;
+    }
+ /*    a태그는 body태그를 따르지 않기때문에 따로 설정. */
+    a {
+      color: #222;
+      text-decoration: none; /* 밑줄 없애기 */
+    }
+    /* 만들어야할 셀렉터 먼저 정리 dropdown, dropdown-btn, dropdown-submenu, dropdown-submenu a */
+    .dropdown { /* dropdown은 block요소이기 때문에 width를 지정하지 않으면 100%가 차고 있다. */
+      border: 1px solid;
+      /* width: 200px; */
+      display: inline-block; /* 컨텐츠 양만큼 줄어들게 하기 */
+    }
+    .dropdown-btn{
+      width: 200px; /* inherit */ /* 부모요소의 값을 상속 받는다 */
+      padding: 10px;
+      font-size: 18px;
+      background-color: yellowgreen;
+      color: #fff;
+      border: none; /* 음영 상태 없애기 */
+      outline: none; /* 하이라이트 없애기 */
+      cursor: pointer; /* 강제로 손가락 나오게 하기 */
+    }
+    .dropdown-submenu {
+      display: none; /* a태그를 모두 감싸고 있는 dropdown-submenu에 display: none을 함. */
+      /* border: 1px solid #000; */
+      width: 200px; /* inherit */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.177);
+    }
+    .dropdown-submenu a {
+      display: block; /* a태그는 인라인요소이므로 가로배치된다. 따라서 세로배치를 위해 block으로 변경 */
+      padding: 5px;
+      text-align: center;
+    }
+    .dropdown-submenu a:hover {
+      background-color: #eee;
+    }
+    /* hover에 마우스가 올라가면 자식요소인 dropdown-submenu를 보이게 할 것 */
+    .dropdown:hover .dropdown-submenu{
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="dropdown">
+    <button class="dropdown-btn">Real Estate Type</button>
+    <!-- dropdown의 자식요소 숨겨져 있다가 나타나는 요소 -->
+    <!-- 디자인 보다는 기능 먼저 완성할 것. -->
+    <div class="dropdown-submenu"> 
+      <a href="#none">All</a>
+      <a href="#none">One room</a>
+      <a href="#none">1.5 rooms</a>
+      <a href="#none">Two room</a>
+      <a href="#none">Three Room</a>
+      <a href="#none">Officetel</a>
+      <a href="#none">Apartment</a>
+    </div>
+  </div>
+
+</body>
+</html>
