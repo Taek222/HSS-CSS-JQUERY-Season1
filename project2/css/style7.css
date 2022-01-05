@@ -1,0 +1,45 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #222;
+  line-height: 1.5em;
+  font-weight: 300;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+.gnb a {}
+.gnb a:before { /* before와 after에 포지션을 쓰지 않는 경우에는 before와 after를 구분해줘야 한다. before는 앞에 after는 뒤에  */
+  content: '01';
+  background-color: royalblue;
+  color: 30px;
+  width: 30px;
+  height: 30px;
+  display: inline-block; 
+  /* before, after는 인라인요소이기에 크기값을 가질 수 없다. 블록요소는 크기값을 가질 순 있지만 줄이 바뀌기 때문에 줄이 안바귀면서 크기값을 갖는 인라인블럭을 줘야 한다. 크기값도 주지않고 아무것도 필요가 없으면 display inline-block 줄필요가 없다.*/
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+  font-size: 12px;
+}
+.gnb a:after {
+  content: 'update'; 
+  /* before, after는 기본이 인라인요소 줄이 안바뀌고 크기값 못가지고 마진 상하를 못가진다. 하지만 좌우는 가질 수 있다. */
+ /*  여기서 position: absolute;를 사요한다는건 부모와의 관계에서 내가 원하는 위치에서 갖다 놓을 때 사용하는 것. 부모요소의 어떤 특정한 요소에 보낼 게 아니라면 즉, before를 왼쪽에 놓고 after를 오른쪽에 놓을거라면 굳이 position을 쓰지 않는다. */
+  font-size: 12px;
+  background-color: crimson;
+  color: #fff;
+  margin-left: 5px;
+  padding: 2px;
+  border-radius: 3px; /* 패딩, 보더레디어스는 인라인 요소 블록요소 관계없이 가질수 있다.  */
+}

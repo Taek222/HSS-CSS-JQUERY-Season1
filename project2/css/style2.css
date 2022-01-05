@@ -16,44 +16,46 @@ a {
 }
 
 .loading {
-  /* border: 1px solid red; */
+  /* border: 1px solid red; */ /* 이 안에서 span이 돈다 */
   width: 30px;
   height: 30px;
-  position: relative;
+  position: relative; /* loading이 부모요소임으로 relative가 필요 */
 }
 .loading span {
-  position: absolute;
+  position: absolute; /* span은 자식요소임으로 absolute가 필요 */
   width: 10px;
   height: 10px;
   background-color: gray;
   top: 0;
   left: 0;
-  animation: loading 1.5s linear infinite;
+  animation: loading 1.5s infinite; /* 여기서는 사용하지 않는게 로딩애니메이션에 적합 */
 }
-.loading span:nth-child(1) {}
+.loading span:nth-child(1) {
+  background-color: crimson;
+}
 .loading span:nth-child(2) {
-  animation-delay: 0.8s;
+  animation-delay: 0.8s; /* 애니메이션 딜레이로 nth-child(2)를 늦게 출발시킨다. */
 }
 
 @keyframes loading {
-  0% {
+  0% { /* 최초의 위치 */
     top: 0;
     left: 0;
   }
   25% {
     top: 0;
-    /* right: 0; */
-    left: calc(100% - 10px);
+    /* right: 0; */ /* 키프레인 애니메이션은 트위닝 시킨다. left로 좌표를 잡았으면 right로 잡으면 트랜지션이 안된다. left 100% 두개의 속성이 같기 때문에 가능 */
+    left: calc(100% - 10px); /*  부모요소 안으로 집어넣는다. calc라는 연산함수를 통해 자기 자신의 너비값만큼 빼줘서 border 안쪽으로 돌게함 */
     background-color: dodgerblue;
   }
   50% {
     /* bottom: 0; */
-    top: 100%;
+    top: calc(100%-10px); /* bottom: 0와 동일한 좌표값을 만드는 탑 */ /*  100%에서 자신의 높이값을 빼줘서 border 안쪽으로 들어옴 */
     left: calc(100% - 10px);
     background-color: orange;
   }
   75% {
-    top: calc(100% - 10px);
+    top: calc(100% - 10px); /*  100%에서 자신의 높이값을 빼줘서 border 안쪽으로 들어옴 */
     left: 0;
     background-color: yellowgreen;
   }

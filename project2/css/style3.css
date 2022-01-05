@@ -49,15 +49,15 @@ a {
 }
 /* 마우스가 올라갔을때 조금더 자연스러운 백그라운드 컬러 형성 */
 .square:hover span:nth-child(1) { 
-  /* background-color: crimson; */
+  background-color: crimson;
   opacity: 0.3;
 }
 .square:hover span:nth-child(2) {
-  /* background-color: dodgerblue; */
+  background-color: dodgerblue;
   opacity: 0.6;
 }
 .square:hover span:nth-child(3) {
-  /* background-color: yellowgreen; */
+  background-color: yellowgreen;
   opacity: 0.8;
 }
 

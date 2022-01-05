@@ -6,6 +6,7 @@ body {
   line-height: 1.5em;
   margin: 0;
   font-weight: 300;
+  /* 정확하게 센터링하기 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,19 +18,21 @@ a {
 
 .loading {}
 .loading span {
+  /* span은 인라인 요소여서 크기값을 못준다. 줄 안바꾸고 크기 유지하기 위해서 */
   display: inline-block;
   width: 15px;
   height: 15px;
   background-color: gray;
   border-radius: 50%;
-  animation: loading 1s linear infinite;
+  animation: loading 1s linear infinite; /* 전체적인 로딩시간 조절 */ 
+  /* linear: 키프레임과 키프레임 구간 넘어갈때 부드럽게 넘어가라 */
 }
 .loading span:nth-child(1) {
-  animation-delay: 0s;
+  animation-delay: 0s; /* 시작하는거 딜레이주는 부분. 딜레이없이 키프레임 실행해라 */
   background-color: crimson;
 }
 .loading span:nth-child(2) {
-  animation-delay: 0.2s;
+  animation-delay: 0.2s; /* 0.2초 대기후에 키프레임 실행해라 */
   background-color: dodgerblue;
 }
 .loading span:nth-child(3) {
@@ -44,11 +47,11 @@ a {
   } */
   0% {
     opacity: 0;
-    transform: scale(0.5);
+    transform: scale(0.5); /* 크기가 작아진 상태 */
   }
   50% {
     opacity: 1;
-    transform: scale(1.5);
+    transform: scale(1.5); /* 크기가 커진 상태 */
   }
   100% {
     opacity: 0;

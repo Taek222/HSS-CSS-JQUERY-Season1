@@ -1,0 +1,76 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+/* 어떤 요소를 브라우저 정중앙에 위치시키는 방법
+1) display 속성을 사용하기
+2) position 속성 사용하기 */
+
+/* 1) body에 display: flex를 사용하는 방법 */
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #222;
+  line-height: 1.5em;
+  font-weight: 300;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+/* 2) 포지션 속성 사용 사용하여 항상 브라우저에 수직중앙, 수평중앙 유지*/
+/* .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+/* .app-ui{}
+.app-ui img{} */
+
+.app-ui {
+  /* border: 1px solid red; */
+  width: 340px; /* 이미지 사이즈 기준. */
+  height: 640px;
+  transform: rotate(-30deg) skewX(20deg) /* 둘 이상 사용할 경우 이렇게 이어가주면서 사용. */
+  /* transform: shewX(20deg) 자연스럽게 돌리기 중복해서 사용할 경우 밑에 있는게 위를 덮어씌움.*/
+  scale(0.7);
+  position: relative; 
+  /* 부모요소이므로 그밑에 이미지들도 당연히 위의 rotate가 적용되고 밑에 이미지들이 쌓아짐 */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+  background-color: #ddd;
+}
+
+/* 마우스가 올라갔을때 그림자를 달리하기 */
+.app-ui:hover {
+  box-shadow: -50px 100px 60px rgba(0, 0, 0, 0.3); 
+}
+.app-ui img {
+  position: absolute;
+  transition: 0.5s; 
+  /* 당연히 이미지가 변하는 것이기때문에 호버가 아닌곳에 transition을 넣어준다. */
+}
+
+/* app-ui에 마우스가 올라갔을때 자식요소 이미지 4개가 x축 y축으로 층층이 이동. */
+.app-ui:hover img:nth-child(1) {
+  transform: translate(40px, -40px); /* x축 y축 적어줌 */
+  opacity: 0.2; /* opacity를 통해 계층구조를 더 잘보이게 디자인 */
+}
+.app-ui:hover img:nth-child(2) { 
+  transform: translate(80px, -80px);/* 1번과 갭두기 */
+  opacity: 0.4;
+}
+.app-ui:hover img:nth-child(3) {
+  transform: translate(120px, -120px);
+  opacity: 0.6;
+}
+.app-ui:hover img:nth-child(4) {
+  transform: translate(160px, -160px);
+}
+
+/* 중요한 부분은 app-ui가 부모요소가 되어야 한다는 점과 app-ui밑에 이미지는 자식요소 그러면 왼쪽 상단을 기준으로 다 모일 것이고, transform: rotate 만으로는 자연스럽지가 않기 때문에 skew속성을 넣어주어야 하는데 transform 속성을 2개이상 사용할때 따로 넣어주게 되면 밑에가 위를 덮어쓰기 때문에 동시에 쓸때는 반드시 한줄에 써야한다. app-ui에 마우스가 올라갔을때 이미지 1,2,3,4번에 변하는 부분은 translate 좌표값을 단계별로 올려준다. opacity를 통해 층층히 만들어진 느낌을 준다. */
