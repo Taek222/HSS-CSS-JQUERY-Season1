@@ -1,0 +1,107 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #222;
+  line-height: 1.5em;
+  margin: 0;
+  background-color: #fff;
+}
+a {
+  text-decoration: none;
+}
+
+.skill-progress {
+  width: 500px;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.088);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.skill-progress h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 40px;
+  font-weight: normal;
+}
+/* .item {} */
+.item p {
+  /* border: 1px solid #fff; */
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+.item p span:nth-child(1) {
+  float: left;
+}
+.item p span:nth-child(2) {
+  float: right;
+}
+.progress {
+  border: 1px solid #6cd4c4;
+  padding: 5px;
+  border-radius: 3px;
+}
+.progress-level {
+  /* width: 90%; */
+  height: 10px;
+  /* background: linear-gradient(방향, 시작색상, 종료색상); */
+  background: linear-gradient(to right, crimson, gold);
+  /* animation-name: ani;
+  animation-duration: 1s;
+  animation-iteration-count: 무한반복 안쓰고 1; 기본값*/
+  animation: ani 1s;
+  animation-fill-mode: both; 
+  /* 정해진 반복횟수가 끝나면 100%에서 머물러라 */
+  /* 특별한 어떤 속성을 사용하지 않을 시 모든 애니메이션은 무한반복이 아니라면 0에서 100에 와서 멈추는게 아니라 다시 0인 상태로 돌아감. */
+}
+
+@keyframes ani {
+  0% {
+    width: 0;
+  }
+}
+
+/* skill-progress 밑에 item:nth-child(1) 밑에 있는 progress-level을 어떻게 할거다. */
+/* nth-child() 사용 
+- 태그나 클래스네임을 체크하지 않고 출현순서만 체크함.*/
+.skill-progress .item:nth-child(1) .progress-level {
+  animation-delay: 0s;
+}
+.skill-progress .item:nth-child(2) .progress-level {
+  animation-delay: 0.2s;
+}
+.skill-progress .item:nth-child(3) .progress-level {
+  animation-delay: 0.4s;
+}
+.skill-progress .item:nth-child(4) .progress-level {
+  animation-delay: 0.6s;
+}
+.skill-progress .item:nth-child(5) .progress-level {
+  animation-delay: 0.8s;
+}
+
+/* nth-of-type 사용 
+- 순서체크는 nth-child와 동일하지만 div가 아닐시 다른 태그 일 경우 체크함.*/
+/* .skill-progress .item:nth-of-type(1) .progress-level {
+  animation-delay: 0s;
+}
+.skill-progress .item:nth-of-type(2) .progress-level {
+  animation-delay: 0.2s;
+}
+.skill-progress .item:nth-of-type(3) .progress-level {
+  animation-delay: 0.4s;
+}
+.skill-progress .item:nth-of-type(4) .progress-level {
+  animation-delay: 0.6s;
+}
+.skill-progress .item:nth-of-type(5) .progress-level {
+  animation-delay: 0.8s;
+} */
+
+/* 이 예제에서 중요하게 생각해야하는것은 애니메이션 필모드라는것은 애니메이션 0,100% 구간에서 100%에 머물러라. nth child로 하게되면 태그를 체크하지 않아서 순서가 밀려 마지막이 nth-child를 못받는다. 이런경우 h1이 중간에 껴있기 때문에 태그를 체크하는 nth-of-type으로 해야한다. */

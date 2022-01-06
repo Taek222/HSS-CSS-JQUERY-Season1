@@ -1,0 +1,86 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #222;
+  line-height: 1.5em;
+  margin: 0;
+  background-color: #fff;
+}
+a {
+  text-decoration: none;
+}
+/* 셀렉터 정리
+.skill-progress {}
+.item {}
+.item p {}
+.item p span {} 공통 디자인 부분 딱히 필요없음
+.item p span:nth-child(1) {}
+.item p span:nth-child(2) {}
+.progress {}
+.progress-level{} */
+.skill-progress {
+  width: 500px;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.122);
+  /* 스킬 프로그래스바 센터링 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.skill-progress h1 {
+  text-align: center; /* 중앙으로 보내주기 */
+  margin-bottom: 50px; /* 마진줘서 띄우기 */
+  font-size: 40px;
+  font-weight: normal; /* 기본적인 bold 빼주는 작업. */
+}
+/* .item {} */
+.item p {
+  
+  overflow: hidden; 
+  /* 자식요소에 float 속성이 있으면 부모요소는 높이값을 잃는다. overflow: hidden으로 높이값을 찾아준다. */
+  /* border: 1px solid #fff; */
+  margin-bottom: 5px;
+  /* p태그의 마진 줄여주기 */
+}
+.item p span:nth-child(1) {
+  float: left; 
+}
+.item p span:nth-child(2) {
+  float: right;
+}
+/* 막대가 되는 부분 */
+.progress {
+  border: 1px solid #6cd4c4;
+  padding: 5px;
+  border-radius: 3px;
+}
+/* gradient가 된 전체적인 큰 막대. */
+.progress-level {
+  /* width: 90%; 여기다가 width를 넣어도 되긴하지만 나머지는 어떻게 할거냐. 나머지는 안된다.*/
+  height: 10px;
+  /* background: linear-gradient(방향, 시작색상, 종료색상); 방향에 각도를 넣어도 되고 중간에 여러가지 색상을 넣어도 된다.*/
+  background: linear-gradient(to right, crimson, gold);
+  animation-name: ani;
+  animation-duration: 1s;
+}
+/* width가 0인 상태에서 각자 주어진 길이만큼 늘어나게 애니메이션 주기.*/
+@keyframes ani {
+  0% {
+    width: 0;
+    /* 시작만 0으로 맞춰놓으면 각각의 width 퍼센트만큼 가다가 멈춘다. */
+  }
+}
+
+/* Key point
+애니메이션파트는 많은 예제를 통해서 다룰 것. 이해안되면 넘어가라. ani의 width를 최초 0으로 만들어 놓는 것. 
+요번 케이스 같이 프로그래스 바를 만들때 중요 키포인트는 
+1. 아이템은 어차피 하나 정상적으로 잘되면 복사하면 되는데 html 다 넣는다고 고생하고 만약 html 조금 변경되면 다 바꿔줘야 한다. 아이템 하나가지고 디자인 완벽하게 하고 정상적으로 다되네? 복사붙여넣기. 하다보면 클래스 네임을 잘못 설계할수도 있다.
+2. css에서 progress-level에 width 값을 넣어주면 5개가 공통적으로 적용된다. 그러면 안되기 때문에 인라인 스타일로 각각에다가 width로 준것 2가지 이유. 1) 물론 nth-child로 줘도 되지만 nth-child를 굳이 안준이유는 아이템 밑에있는 프로그래스 밑에있는 프로그래스 레벨 이렇게 주지 않으려는 이유 2) 이렇게 html형태로 들어가면 프로그래머가 이안에 개발코드를 심을수 있기 때문에 이렇게 한것. 
+그리고 p태그에서 p태그안에 텍스트가 2개있는걸 span으로 묶었다. 물론 2개밖에 없으니 first, last-child 사용 해도 상관없다.
+소프트웨어 스킬부분에 마진을 조금 줘서 띄우고 싶다면 h1태그에 마진 버텀을 주면된다. */
