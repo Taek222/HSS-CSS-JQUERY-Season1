@@ -41,7 +41,7 @@ a {
   scale(0.7);
   position: relative; 
   /* 부모요소이므로 그밑에 이미지들도 당연히 위의 rotate가 적용되고 밑에 이미지들이 쌓아짐 */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.299);
   transition: 0.5s;
   background-color: #ddd;
 }

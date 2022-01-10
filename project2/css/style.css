@@ -16,7 +16,7 @@ a {
   text-decoration: none;
 }
 
-.loading {}
+/* .loading {} */
 .loading span {
   /* span은 인라인 요소여서 크기값을 못준다. 줄 안바꾸고 크기 유지하기 위해서 */
   display: inline-block;

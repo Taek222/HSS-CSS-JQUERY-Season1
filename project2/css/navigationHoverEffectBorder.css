@@ -1,0 +1,121 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+a.btn1,
+a.btn2,
+a.btn3,
+a.btn4,
+a.btn5 {
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  padding-bottom: 5px;
+  display: block;
+  margin-bottom: 30px;
+}
+
+/* a.btn1 */
+a.btn1:before {
+  /* postition을 사용하기 때문에 before, after 뭘로하든 상관없다. */
+  /* border 모양 만들기 */
+  content: '';
+  position: absolute;
+  /* 이걸 주는순간 모든 인라인 요소가 인라인 블록으로 변경된다. 따라서 위치도 잡고 크기값도 가질 수 있다.*/
+  bottom: 0; /* 밑에다 배치 */
+  left: 0;
+  background-color: crimson;
+  height: 2px;
+  width: 0;
+  border-radius: 2px;
+  transition: 0.5s;
+}
+
+a.btn1:hover:before {
+  width: 100%; /* 왼쪽을 기준으로 100% 커진다 */
+}
+
+/* a.btn2 */
+a.btn2:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0; /* 오른쪽에 붙은 상태에서 width가 0인 상태 */
+  background-color: crimson;
+  height: 2px;
+  width: 0;
+  border-radius: 2px;
+  transition: 0.5s;
+}
+
+a.btn2:hover:before {
+  width: 100%;
+}
+
+/* a.btn3 */
+a.btn3:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: crimson;
+  height: 4px;
+  width: 4px;
+  transition: 0.5s;
+}
+
+a.btn3:hover:before {
+  /* left: 100%;  */
+  /* 부모요소의 끝점을 이야기함. 변경할 필요가 없다. */
+  left: calc(100% - 4px);
+}
+
+/* a.btn4 */
+a.btn4:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background-color: crimson;
+  height: 2px;
+  width: 0; 
+  /* 중앙을 기준으로 width가 넓어지는거니 처음에 0 */
+  border-radius: 2px;
+  transform: translateX(-50%);
+  /* 크기 값이 left: 50%을 기준으로 커지기 때문에 50%만큼 빼줘서 가운데 부터 양쪽으로 커지게 변경 */
+  transition: 0.5s;
+}
+
+a.btn4:hover:before {
+  width: 100%;
+}
+
+/* a.btn5 */
+a.btn5:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background-color: crimson;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+
+a.btn5:hover:before {
+  width: 0;
+  /* width: 0px; */
+  /* width: 0%; */
+}
