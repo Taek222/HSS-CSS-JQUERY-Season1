@@ -1,0 +1,62 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+  font-family: 'Noto Sans KR', snas-serif;
+  line-height: 1.5em;
+  margin: 0;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+a {
+  text-decoration: none;
+}
+form input[type=checkbox] {
+  display: none; 
+  /* 기능은 하지만 화면에 안보이게끔 감춰줌 */
+}
+form label {
+  display: block;
+  cursor: pointer;
+}
+form label:before {
+  content: '\f00c'; 
+  /* position 혹은 좌표 잡아줄 필요없음 */
+  font-family: fontawesome;
+  border: 1px solid #333;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  margin-right: 5px;
+  font-size: 13px;
+  vertical-align: middle; 
+  /* 중앙으로 뭉치기 */
+  display: inline-block;
+  /* 줄 바뀌지않고 크기값 갖도록 */
+  text-align: center;
+  line-height: 14px;
+  /* 정중앙 맞추기 */
+  color: transparent; 
+  /* 최초상태(체크안된상태)에는 색상이 안보이게 */
+  transition: 0.2s;
+}
+/* 눌렀을때 인접한 라벨의 before를 어떻게 할거다.*/
+form input[type=checkbox]:checked + label:before {
+  background-color: crimson;
+  color: #fff;
+  border-color: transparent;
+  /* 양쪽으로 1px씩 줄어드는 것 없애기 */
+}
+/* 눌린 느낌 들게하기 */
+/* active된 상태는 마우스를 눌렀다가 떼지 않은상태 */
+form input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
+
+/* 폰트어썸을 사용한 커스텀 체크박스 만들었고 라벨이라는거. beforeafter는 라벨은 가질수있기때문에 라벨의 비포를 이용해서 폰트어썸 넣어서 액트비 가상클래스 사용해서 변화를 만들어 주는 커스텀 체크박스 만듬. 이렇게 2편까지 만든 정도의 요구하는 시험은 없다. */

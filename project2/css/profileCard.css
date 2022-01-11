@@ -1,0 +1,101 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+  font-family: 'Raleway', snas-serif;
+  line-height: 1.5em;
+  margin: 0;
+  background-color: #fff;
+}
+a {
+  text-decoration: none;
+}
+
+/* contaienr안에 자식요소 중앙으로 보내기 */
+.container {
+  display: flex;
+  justify-content: center; /* 수평정렬 */
+  align-items: center; /* 수직정렬 */
+  height: 100vh; /* 높이값 */
+}
+.card {
+  margin: 10px;
+  position: relative; /* content의 부모요소 */
+  width: 300px;
+  height: 400px;
+  overflow: hidden; 
+  /* 넘치는 부분 가리기 */
+  transition: 0.5s;
+  border-radius: 5px;
+}
+.content {
+  width: inherit;
+  height: inherit;
+  /* 부모요소의 값 받아옴 */
+  position: absolute; 
+  /* 인라인블록.. width, height지정가능 */
+  top: 100%; 
+  /* 400px과 동일 부모요소의 끝점부터 자식요소 실행시키는 것과 같다. */
+  left: 0;
+  padding: 20px;
+  box-sizing: border-box; 
+  /* 최초의 정한 width에 맞게 들어오도록. */
+  /* background-color: linear-gradient(to top, crimson, transparent); */
+  color: #fff;
+  text-align: center;
+  padding-top: 150px;
+  /* text content를 밑으로 배치 */
+  box-sizing: border-box;
+  transition: 0.5s; /* 0은 생략가능 */
+}
+
+.card:nth-child(1) .content {
+  background: linear-gradient(to top, crimson, transparent);
+}
+.card:nth-child(2) .content {
+  background: linear-gradient(to top, dodgerblue, transparent);
+}
+.card:nth-child(3) .content {
+  background: linear-gradient(to top, yellowgreen, transparent);
+}
+
+.content h2 {
+  font-size: 30px;
+}
+.content h2 span {
+  display: block;
+  font-size: 14px;
+  color: gold;
+  margin-top: 10px;
+}
+
+.sns a {
+  color: #fff;
+  border: 1px solid #fff;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  /* 줄 안바뀌고 크기값 넣기 */
+  border-radius: 50%;
+  font-size: 13px;
+  text-align: center;
+  line-height: 20px;
+}
+.card:hover .content {
+  top: 0;
+}
+/* 운동감을 주기위해 자기자신도 조금 이동시킴 */
+.card:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.231)
+}
+
+/* card nth child(1) 밑에 있는 컨텐트로 해야함 nth-child할대 content에 하면 아무것도 작동안함. 왜냐면 카드 div안에 content는 하나밖에 없기때문에 nth--child가 안됨. 
+
+h2 h3태그로 하는데 h2안에 줄바꿀때는 span태그 넣어서 마크업.
+그다이언트에서 transparent도 색깔의 하나의 값. 
+배치할때 컨테이너안에 센터링 하는 것. 
+사람 사진이 아닌 제품, 서비스 ui 호버 이펙트도 만들 수 있다.*/
