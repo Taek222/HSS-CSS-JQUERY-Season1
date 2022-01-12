@@ -1,0 +1,118 @@
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #222;
+  line-height: 1.6em;
+  background-color: #f4f4f4;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+section {
+  /* border: 1px solid #000; */
+  width: 800px;
+}
+.tab-inner {
+  margin-top: 30px;
+}
+.btn {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* border: 1px solid red; */
+  overflow: hidden;
+  margin-left: 10px;
+  /* 전체적으로 조금 오른쪽으로 밀기 */
+}
+.btn li {
+  float: left;
+  /* border: 1px solid #000; */
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #eee;
+  border-right: 1px solid #ddd;
+  padding: 5px;
+  border-top: 2px solid transparent;
+  /* 덜컹거림을 방지하기 위해 최초에도 border-top 2px을 넣어줌 */
+}
+/* 마지막에 있는 CSS FRAMEWORKS width변경 */
+.btn li:last-child {
+  width: 170px;
+  border-right: none;
+}
+/* hover, active 됐을때 디자인이 동일 */
+.btn li:hover,
+.btn li.active {
+  background-color: #fff;
+  border-top: 2px solid crimson;
+}
+/* .tabs {} */
+.tabs div {
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  display: none;
+}
+/* 눌렀을 때 기능이 완성된 후에 하나식 찾아가서 넣어주는게 중요. */
+.tabs div.active {
+  display: block;
+}
+
+/* Tab Content */
+.tabs div h2 {
+  text-align: center;
+}
+.tabs div img {
+  float: left; 
+  /* 가로배치 */
+  margin-right: 10px;
+}
+.tabs div p {
+  overflow: hidden; 
+  /* 이미지 밑으로 튀어나오는거 안보이게 */
+}
+
+/* Heading */
+/* .heading {} */
+.heading h1 {
+  font-size: 30px;
+  text-align: center;
+}
+.heading h1 span {
+  color: crimson;
+}
+.heading input[type=text] {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  /* input타입, 버튼들은 before,after를 사용 불가. */
+  background: #fff url(images/search-icon.png) no-repeat center left 5px;
+  /* 수평중앙 5px 떨어진 만큼 왼쪽정렬 */
+  /* background 속성을 겹쳐쓰면 안된다. */
+  background-size: 23px;
+  padding-left: 35px;
+}
+.heading input[type=text]::placeholder {
+  /* css3버전부터 새로생긴 것은 :이 무조건 2개 있어야함. */
+  font-style: italic;
+  transition: 0.3s;
+}
+/* heading 밑에 input 타입 text인 애를 클릭시 자기자신의 placeholder를 변경 */
+.heading input[type=text]:focus::placeholder {
+  /* 요소를 없애는 3가지 방법 */
+  /* display: none;  */
+  /* 크기값도 동시에 사라짐 placeholder는 display: none으로 없애면 안됨*/
+  /* visibility: hidden; */
+  /* 사라지지만 크기값은 유지한채 사라짐*/
+  opacity: 0;
+  /* 사라지는게 아니라 투명해지는 것뿐 transition을 주기 위해서 사용.*/
+}
