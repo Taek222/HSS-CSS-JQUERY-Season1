@@ -1,0 +1,112 @@
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+/* FontAwesome CDN 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* 기본적인 바디서식 */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #222;
+  margin: 0;
+  font-weight: 300;
+}
+a {
+  text-decoration: none;
+  color: #222;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+}
+
+/* Layout */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+section article {
+  width: 980px;
+  height: 500px;
+}
+.heading {
+  text-align: center;
+}
+.heading span {
+  color: crimson;
+  font-size: 24px;
+}
+.heading h1 {
+  font-size: 36px; /* 줄바뀌지 않는 선까지만 */
+  margin-top: 10px; 
+}
+.heading h1 em {
+  font-style: normal;
+  position: relative;
+}
+.heading h1 em:after {
+  position: absolute;
+  content: url(/project2/images/logo-kakao.png);
+  /* attr로 사용자 정의 속성 불러오는 것처럼 url이라는 것 사용.  */
+  /* background: url */
+  right: -30px;
+  top: -25px;
+}
+/* .content {} */
+.content > div {
+  /* 스페이스는 컨텐트 밑에 div밑에 자손 모두선택. css에서 자식 선택자로 바꿔줘야한다. content 바로 밑에 있는 div만 선택 */
+  width: 50%;
+  float: left;
+  height: 400px;
+  box-sizing: border-box;
+}
+/* .accordion {} */
+.title {
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  padding-left: 15px;
+  /* position: relative; */
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+.title:after {
+  content: '\f105';
+  font-family: fontawesome;
+  /* position: absolute;
+  right: 10px;
+  top: 7px; */
+
+  /* position 속성 안쓰고 맞추기. 상황에 맞춰서 사용*/
+  float: right;
+  margin-right: 5px;
+  margin-top: 3px;
+  transition: 0.3s;
+}
+/* title에 active라는 클래스 들어갔을때 after상태변화*/
+.title.active:after {
+  transform: rotate(90deg);
+  color: orange;
+}
+.title:hover,
+.title.active {
+  background-color: #203049;
+  color: #fff;
+}
+.desc {
+  padding: 15px;
+  display: none; 
+  /* 처음에는 안보여야함. */
+}
+.desc.active {
+  display: block;
+  /* actvie라는 클래스가 추가되면 보이게 함. */
+}
+.image {
+  text-align: right
+}
+.image img {
+  height: 370px;
+}

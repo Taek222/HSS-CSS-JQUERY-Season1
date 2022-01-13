@@ -21,7 +21,7 @@ body {
 .navi li a {
   font-size: 4em;
   text-decoration: none;
-  color: #000;
+  color: #fff;
   position: relative;
 }
 .navi li a:before {
@@ -48,7 +48,7 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background-image: url(images/portrait-initial.jpg);
+  background-image: url(/project2/images/portrait-initial.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

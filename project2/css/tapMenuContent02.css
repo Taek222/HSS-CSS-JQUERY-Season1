@@ -95,7 +95,8 @@ section {
   border: none;
   border-bottom: 2px solid #ddd;
   /* input타입, 버튼들은 before,after를 사용 불가. */
-  background: #fff url(images/search-icon.png) no-repeat center left 5px;
+  /* background: url(project2/css/images/search-icon.png) no-repeat center left 5px; */
+  background: url(/project2/images/search-icon.png) no-repeat center left 5px;
   /* 수평중앙 5px 떨어진 만큼 왼쪽정렬 */
   /* background 속성을 겹쳐쓰면 안된다. */
   background-size: 23px;
