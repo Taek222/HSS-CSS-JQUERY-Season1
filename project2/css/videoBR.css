@@ -106,3 +106,17 @@ body {
   color: #fff;
   border-color: #000;
 }
+.btn-learn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Anniversary */
+.anniversary {
+  position: absoulte;
+  right: 100px;
+  bottom: 50px;
+  color: #000;
+}
+.anniversary em {}
+
