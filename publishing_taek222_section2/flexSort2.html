@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>플렉스(Flex) 속성으로 자유롭게 자식요소 정렬하기</title>
+  <style>
+    /* 자식요소를 완벽하게 센터링 하고 싶을 때 */
+    .card {
+      border: 1px solid #000;
+      width: 500px;
+      height: 400px;
+      padding: 20px;
+      display: flex;
+      /* 어떤 요소를 완벽하게 정중앙에 보낼때도 사용 */
+      justify-content: center;
+      align-items: center;
+      /* flex-start flex-end */
+    }
+    .content {
+      border: 1px solid #000;
+      width: 70%;
+    }
+    .card h1 {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="content">
+      <h1>Card Title</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quas distinctio maxime inventore non eveniet animi quia cumque neque id libero optio quidem rem consequatur accusantium soluta, itaque officia quibusdam.
+      </p>
+      <a href="#none">Read More</a>
+    </div>
+  </div>
+  
+</body>
+</html>

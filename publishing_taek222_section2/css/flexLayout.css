@@ -1,0 +1,82 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', snas-serif;
+  line-height: 1.6em;
+  font-size: 18px;
+}
+
+/* Section : Hero */
+.hero {
+  /* border: 5px solid red; */
+  height: 70vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(0, 0, 0, 0.197); */
+  background: linear-gradient(to left, black, transparent);
+  /* 오버레이 씌우는 작업하는 이유: 1)텍스트 가독성 높이기 2)오버레이 씌우면 영상 퀄리티가 떨어지는걸 거의 느끼지 못한다. */
+}
+
+/* hero 밑에 video를 가득채우는 과정 */
+/* ######### Using position ########## */
+/* .hero video {
+  position: absolute;
+  z-index: -1;
+
+  이 다섯줄을 object-fit으로 대체
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+/* ######### Using position object-fit ########## */
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* 동영상은 우선순위가 최우선순위임. z-index: -1로 내려주는 작업*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* object-fit은 부모요소의 너비와 높이 반드시 존재. 자식요소 너비높이 부모요소랑 같아야함. 중앙유지하는 부분을 한방에 대체 IE에서 지원을 안한다. */
+}
+.hero .heading {
+  text-align: center;
+  width: 60%;
+  color: #fff;
+}
+.hero .heading h1 {
+  font-weight: 500;
+  line-height: 1.6em;
+  font-size: 2em;
+}
+.hero .heading h1 span {
+  display: block;
+  color: crimson;
+}
+
+/* Section : content */
+.content {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+}
+.content .inner {
+  width: 1280px;
+  /* 이게 일반적.. 1336 이 해상도 쓰는 사람 가로스크롤 생기면 안되고 컨텐츠 영역 넓으면 제작힘들다. */
+  display: flex;
+  /* 가로배치 */
+  gap: 70px;
+  /* 띄어놓기 */
+}
+/* .content .inner div {
+  flex: 1;
+} */
