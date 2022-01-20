@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>플렉스(Flex) 속성으로 자유롭게 자식요소 정렬하기</title>
+  <!-- 가로세로배치 변경에 용이 -->
+  <style>
+    /* 자식요소 가로배치하기 */
+    .parent {
+      border: 5px solid #000;
+      width: 1280px;
+      height: 500px;
+      display: flex;
+      /* 알아서 정확하게 오토로 맞춰줌 */
+      justify-content: center;
+      align-items: center;
+      /* flex-start, flex-end */
+      /* 부모요소가 커지든 작아지든 중앙유지 */
+    }
+    .parent div {
+      border: 5px solid red;
+      height: 200px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="parent">
+    <div>child</div>
+  </div>
+  
+</body>
+</html>
