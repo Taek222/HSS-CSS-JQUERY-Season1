@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object-fit과 object-position으로 Img를 배경처럼 사용하기</title>
+  <!-- 이미지가 보기 흉하지 않게 들어가게끔 해준다. 효율적으로 이미지 관리가능. -->
+  <style>
+    .frame3 {
+      border: 5px solid red;
+      width: 600px;
+      height: 800px;
+    }
+    .frame3 img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="frame3">
+    <img src="/publishing_taek222_section2/images/front.jpg">
+  </div>
+  <img src="/publishing_taek222_section2/images/front.jpg">
+  
+  
+  
+</body>
+</html>
