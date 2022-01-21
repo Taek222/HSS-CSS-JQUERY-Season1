@@ -8,8 +8,11 @@
     body {
       font-family: 'Montserrat', sans-serif;
     }
-    ul + p {
+    ul ~ p {
       color: red;
+    }
+    ul ~ div p + div {
+      color: green;
     }
   </style>
 </head>
@@ -26,6 +29,17 @@
     <p>문단입니다.</p>
   </div>
   <p>문단입니다.</p>
+  <hr>
+  <ul>
+    <li>목록1</li>
+</ul>
+<p>문단입니다.</p> 
+<p>문단입니다.</p> 
+<div>
+    <p>div 안에 자식 p입니다.</p>
+    <div>div 안에 자식 div입니다.</div>
+</div>
+<p>문단입니다.</p> 
   
 </body>
 </html>

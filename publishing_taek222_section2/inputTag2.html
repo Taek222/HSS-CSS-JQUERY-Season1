@@ -14,7 +14,7 @@
       font-family: 'Montserrat', sans-serif;
     }
     input[id=trigger] {
-      /* []: 속성선택자. id가 trigger인 애들을 안보여줄거다. */
+      /* []: 속성선택자. id가 trigger인 input을 안보여줄거다. */
       display: none;
     }
     label[for=trigger] {
@@ -24,6 +24,7 @@
       height: 20px;
       display: block; 
       /* 크기값을 가질 수 있는 display속성으로 */
+      /* position: relative; */
       position: absolute;
       top: 10px;
       left: 10px;
@@ -87,16 +88,16 @@
 
   <div class="container">
     <input type="checkbox" id="trigger">
-    <!-- 누르는 이벤트만 화면에 안보임 -->
-    <!-- input과 라벨 연결시키기 -->
+    <!-- 누르는 이벤트만 받고 화면에는 안보임 -->
+    <!-- input과 라벨 짝궁. 연결시키기 -->
     <label for="trigger">
-      <!-- 기능은 라벨이.. 작대기 세개.. 누르는 동작 받아서 이벤트 전달.-->
+      <!-- input은 안보이게 하고 기능은 라벨이.. span은 작대기 세개.. input과 label의 속성이 동일하면 input은 보이지 않지만 누르는 동작을 전달 받아서 이벤트 전달.-->
       <span></span>
       <span></span>
       <span></span>
     </label>
     <div class="sidebar"></div>
-    <!-- 숨어있다가 나타나는 sidbar -->
+    <!-- 숨어있다가 나타나는 sidebar -->
   </div>
   
 </body>
