@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>input 태그의 :checked와 확장선택자-이론예제</title>
+  <!-- checked: 클릭하는 이벤트를 만들어주는 것. input태그와 함께 쓰임. -->
+  <style>
+    /* Google Web Font */
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+    /* Fontawesome 4.7 */
+    @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    input[id=trigger] {
+      /* []: 속성선택자. id가 trigger인 애들을 안보여줄거다. */
+      display: none;
+    }
+    label[for=trigger] {
+    /* for=trigger인 라벨 선택 */
+      /* border: 1px solid red; */
+      width: 30px;
+      height: 20px;
+      display: block; 
+      /* 크기값을 가질 수 있는 display속성으로 */
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    label[for=trigger] span {
+      display: block;
+      height: 2px;
+      background-color: #000;
+      position: absolute;
+      /* 모든 요소는 인라인블록요소가 되니 width: 100% 줘야함. */
+      left: 0;
+      width: 100%;
+      /* display: block시 특별한 경우 제외하고 크기값 100%가짐. */
+      transition: 0.3s;
+      z-index: 1000;
+    }
+    label[for=trigger] span:nth-child(1) {
+      top: 0;
+    }
+    label[for=trigger] span:nth-child(2) {
+      top: 50%;
+    }
+    label[for=trigger] span:nth-child(3) {
+      top: 100%;
+    }
+    /* 눌렀을때 인접한 label의 span */
+    input[id=trigger]:checked + label span:nth-child(1) {
+      top: 50%;
+      transform: rotate(45deg);
+    }
+    input[id=trigger]:checked + label span:nth-child(2) {
+      opacity: 0;
+    }
+    input[id=trigger]:checked + label span:nth-child(3) {
+      top: 50%;
+      transform: rotate(-45deg);
+    }
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: pink;
+      position: fixed;
+      top: 0;
+      /* 왼쪽 상단에 붙이기 */
+      left: -250px;
+      /* widht만큼 왼쪽으로 옮겨서 안보이게 */
+      transition: 0.3s;
+    }
+    input[id=trigger]:checked ~ .sidebar {
+      left: 0;
+    }
+    input[id=trigger]:checked + label {
+    /* input에 인접한 애는 하나뿐이기 때문에 속성 안넣어줘도 된다. */
+      left: 210px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <input type="checkbox" id="trigger">
+    <!-- 누르는 이벤트만 화면에 안보임 -->
+    <!-- input과 라벨 연결시키기 -->
+    <label for="trigger">
+      <!-- 기능은 라벨이.. 작대기 세개.. 누르는 동작 받아서 이벤트 전달.-->
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <div class="sidebar"></div>
+    <!-- 숨어있다가 나타나는 sidbar -->
+  </div>
+  
+</body>
+</html>
