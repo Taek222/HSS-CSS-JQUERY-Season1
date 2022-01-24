@@ -1,0 +1,37 @@
+/* XEION CDN */
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+/* 중앙정렬 센터링 */
+body {
+  height: 100vh; 
+  /* 높이값 늘리기 */
+  display: flex;
+  justify-content: center;
+  /* 수평정렬 */
+  align-items: center;
+  /* 수직정렬 */
+  margin: 0;
+  background-color: #222;
+}
+.frame i {
+  font-size: 10em;
+  color: #fff;
+  text-shadow: 0 0  30px crimson,
+               0 0  60px crimson,
+               0 0  90px crimson,
+               0 0 120px crimson;
+  /* box-shadow는 박스모양으로 shadow가 생김. 중첩은 ','로 */
+  animation: hue-rotate 3s linear infinite;
+  /* 앞에는 duration 뒤에가 delay      */
+}
+
+@keyframes hue-rotate {
+  0% {
+    filter: hue-rotate(0deg);
+    /* 단위는 빼면 안되지만 0은 상관없다 */
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+/* 계속 회전하면서 hue라는 색조를 계속 바꿔준다. */

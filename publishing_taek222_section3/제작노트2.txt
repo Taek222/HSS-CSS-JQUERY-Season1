@@ -1,0 +1,27 @@
+■ 제작노트(HTML+CSS+JS 실전 퍼블리싱 예제)
+
+1) 도트 동그라미 5개 만들고 배치하기
+2) 폰트어썸 비행기 아이콘 넣기
+3) 키프레임 만들기(2개)
+4) 부모요소 overflow: hidden;
+
+<i class="fa fa-plane"></i>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================
+XEICON Library
+<i class="xi-chrome"></i>
+<i class="xi-firefox"></i>
+<i class="xi-opera"></i>

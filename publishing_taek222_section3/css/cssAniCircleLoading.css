@@ -1,0 +1,101 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  line-height: 1.6em;
+  color: #222;
+  /* Flex & Grid Centering */
+  /* 센터링하고자 하는 요소의 부모요소에 할 것. */
+  /* display: flex; */
+  display: grid;
+  /* 배치는 다르지만 정렬은 같다. */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+/* CSS Keyframe Animation - Circle Loading */
+.loading {
+  /* border: 1px solid #000; */
+  /* 얼마만큼 공간을 차지하는지 확인하는 용도로 꼭 필요 */
+  width: 60px;
+  height: 60px;
+  /* Position */
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  부모요소(body)를 기준으로 loading이 얼마나 떨어져 있냐. 모든 요소는 좌표할때 왼족 상단기준.
+  transform: translate(-50%, -50%);
+  내 자신이 이동하는 것. */
+  /* line-height: 50px; */
+  position: relative;
+  /* 만약 position 속성으로 센터링 했다면 relative줄필요 없다. */
+}
+.circle {
+  border: 5px solid #000;
+  width: inherit;
+  height: inherit;
+  /* 부모요소의 값 그대로 받아오기 */
+  box-sizing: border-box;
+  border-radius: 50%;
+  border-right-color: lightgray;
+  border-left-color: lightgray;
+  animation: circle 1s linear infinite;
+  /* animation-direction: reverse; */
+}
+.loading span {
+  font-size: 10px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  /* 두가지 이상의 속성을 쓸때는 한줄에 ,로 연결 */
+  font-weight: 500;
+  animation: loading 1s linear infinite;
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0);
+    /* css에서 단위를 빼면 절대 안됨. 0이니까 가능. */
+  }
+  100% {
+    transform: rotate(360deg);
+    /* 시계 반대방향은 -360 */
+  }
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  /* 0%, 100% {
+    opacity: 0;
+  } */
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* flex,grid로 센터링해도 되지만, height를 강제로 늘려줘야 한다. 로딩에 width, height를 줄때 자식요소를 inherit를 통해 유동적으로 부모요소의 크기를 상속받아서 받아온다. 자동반영됨. 
+
+띠 디자인은 보더 라이트, 래프트 다르게. animation-direction: reverse. 
+
+0텍스트 크기는10px이하로는 안줄기때문에 scale로 줄여야 하는데 transform은 무조건 한줄에 적어야함. 하나의 선택자의 transform속성이 두개면 안된다.
+
+키프레임 애니메이션.. 안돌다가 도는 구간 2구간. 0이 아닐때는 deg무조건 넣어주기. */
