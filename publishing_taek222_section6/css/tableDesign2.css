@@ -1,0 +1,71 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  color: #333;
+  line-height: 1.6em;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+
+/* Table : Member */
+.member {
+  width: 900px;
+  background-color: #fff;
+  border-collapse: collapse;
+  /* 스페이싱 없는 예쁜 보더가 그려짐 */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  overflow: hidden;
+  /* th의 배경색이 삐져나오는 것을 가려줌 */
+}
+.member caption {
+  font-size: 30px;
+  margin-bottom: 30px;
+  /* background-color: #000;
+  color: #fff;
+  padding: 10px; */
+  /* 캡션 넣는 순간 전체테이블의 높이가 늘어나서 위쪽 보더레디어스가 적용이 안됨. */
+}
+.member tr {
+  border-bottom: 1px solid #eee;
+  transition: 0.3s;
+}
+.member tr:last-child {
+  border: none;
+}
+/* .member tr:hover {
+  background-color: #eee;
+} */
+.member tr:nth-child(odd) {
+  /* 가독성을 높이기 위해 홀수만 색깔다르게 줌 2n+1 짝수는 even. 처음엔 화이트로 시작하는게 좋음 */
+  background-color: #eee;
+}
+.member th,
+.member td {
+  padding: 12px;
+  text-align: center;
+}
+.member tr th {
+  background-color: dodgerblue;
+  color: #fff;
+}
+/* 캡션 넣는 순간 전체 테이블의 높이가 늘어나서 위쪽 보더레디어스가 적용이 안됨. */
+/* border-radius 개별적으로 주기. 상우하좌 */
+.member tr th:first-child {
+  border-radius: 5px 0 0 0;
+}
+.member tr th:last-child {
+  border-radius: 0 5px 0 0;
+}
+.member tr td:last-child {
+  color: red;
+}
+
+/* 테이블 태그 클래스네임 이외에는 nth-child를 사용해서 class 네임 필요없이 원하는 대로 디자인가능. */
