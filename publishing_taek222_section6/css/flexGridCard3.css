@@ -54,6 +54,7 @@ section {
 .items {
   /* text-align: center; */
   display: flex;
+  /* 가로배치 */
   /* display: grid; */
   /* grid-template-columns: repeat(3, auto); */
   /* 그리드는 자동으로 가로배치가 안됨 */
