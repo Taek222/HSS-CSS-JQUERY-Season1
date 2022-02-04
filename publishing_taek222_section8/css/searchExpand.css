@@ -1,0 +1,116 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+/* XEION CDN */
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  /* input 요소에는 적용이 안되기 때문에 전체 선택자에 적용 */
+}
+body {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+  line-height: 1.6em;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* JavaScript & jQeury - Search field expand */
+header {
+  background-color: #eee;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  /* 첫번째 왼쪽 마지막 오른쪽 수평배치 */
+  align-items: center;
+  /* 수직중앙 맞추기 */
+  /* 퍼블리셔한테는 서치바 확장하는 것 보다 이런 디자인이 훨씬 중요하다 */
+  padding: 0 20px;
+  position: fixed;
+  width: 100%;
+}
+/* .logo {
+  float: left;
+}
+.search {
+  float: right;
+} */
+
+/* 이부분 설명 보출 */
+section {
+  height: 900px;
+  text-align: center;
+  border: 1px solid #ddd;
+  display: flex;
+  /* flex-direction: row; */
+  flex-direction: column;
+  /* 가로배치를 변경하기 */
+  /* 요소가 두개 일때 flex-direction이 column으로 바꼈기 때문에 좌우(가로세로)가 변경되므로 수직중앙을 justify-content로 해줘야 함. */
+  justify-content: center;
+  /* align-items: center; */
+}
+
+section h1 {
+  font-size: 3em;
+}
+
+/* Search CSS */
+.search { /* 전체적인 search 모양 잡기 */
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px 50px 50px 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative;
+  transition: 0.5s;
+}
+.search.active {
+  width: 400px;
+}
+.icon { /* search active 들어가기 전 상태 */
+  width: 50px;
+  height: 50px;
+  /* search에 active가 들어가면서 너비가 길어지므로 inherit 하면 안된다. */
+  border-radius: 50%;
+  text-align: center;
+  line-height: 54px;
+  font-size: 26px;
+  cursor: pointer;
+  background-color: #fff;
+  position: absolute;
+  /* 포지션 속성 있는게 없는 것 보다 우선하기 때문에 포지션 속성을 줘야함 */
+  top: 0;
+  left: 0;
+}
+
+/* 입력 필드 디자인 */
+.input-frame { /* 위치 잡기 */
+  position: absolute;
+  top: 12px;
+  left: 60px;
+  width: 300px;
+}
+.input-frame input[type=text] { /* 디자인 */
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 18px;
+}
+.input-frame input[type=text]::placeholder {
+  transition: 0.5s;
+}
+.input-frame input[type=text]:focus::placeholder {
+  opacity: 0;
+}
+.clear {
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  cursor: pointer;
+}
