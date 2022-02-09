@@ -131,7 +131,7 @@ footer em {
   border-bottom: 1px solid #aaa;
   /* 왜 보더 바텀이 안들어 가지? */
 }
-.sub-navi li a:last-child {
+.sub-navi li:last-child a {
   border-bottom: none;
   /* border-bottom: 1px solid #aaa; */
 }
