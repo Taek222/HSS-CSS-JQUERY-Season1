@@ -1,25 +1,64 @@
 /* Google Web Font */
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
+/* XEION CDN */
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 * {
   font-family: 'Raleway', sans-serif;
 }
+html,
+body {
+  height: 100%;
+}
 
 body {
-  font-size: 15px;
   margin: 0;
+  font-size: 15px;
   line-height: 1.5em;
   color: #222;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 a {
   text-decoration: none;
   color: #222;
 }
-.login {
+.content {
+  min-height: calc(100vh - 100px);
+}
+
+/* heading */
+.heading {
+  margin: auto;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+.heading h1 {
+  color: darkblue;
+  font-weight: bold;
+}
+.heading button {
+  border: 1px solid darkblue;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.heading p {
+  color: darkblue;
+  padding: 0 5px;
+}
+
+/* Animation Validate Login Form */
+.login{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   width: 500px;
   padding: 30px;
@@ -58,11 +97,12 @@ a {
 } */
 .input-field span em {
   color: red;
+  font-style: normal;
   font-size: 18px;
   
 }
-.forgetPassword {
-}
+/* .forgetPassword {
+} */
 .forgetPassword a {
   float: right;
   color: darkblue;
@@ -109,7 +149,7 @@ a {
 
 .input-field span.warning {
   color: crimson !important;
-  animation: warning 0.3s ease-in-out 2;
+  animation: warning 0.2s ease-in-out 2;
 }
 @keyframes warning {
   0%, 100% {
@@ -126,26 +166,26 @@ a {
   }
 }
 
-/* Custom Checkbox */
-/* .add-info label input[type=checkbox] {} */
-#save-email {
-  display: none;
+/* Footer */
+footer {
 }
-/* .add-info label em {} */
-#save-email + em {
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  margin-right: 5px;
-  /* vertical-align: middle;
-  margin-top: -2px; */
-  transform: translateY(4px);
-  background: url(images/icon-checkbox.png) no-repeat;
-  background-position: left;
+.footer-inner {
+  height: 100px;
+  padding: 40px;
+  margin: auto;
+  overflow: hidden;
 }
-#save-email:checked + em {
-  background-position: right;
+.footer-policy {
+  float: left;
 }
-#save-email:checked + em + span {
-  color: #1bbe93;
+.footer-policy a {
+  margin: 0 15px 0 0;
 }
+.footer-sns {
+  float: right;
+}
+.footer-sns a {
+  font-size: 1.3em;
+  margin: 0 0 0 15px;
+}
+/* content:"\f09a"; */
