@@ -1,0 +1,28 @@
+.container
+  header
+    .heading
+      img
+      button
+  .wrapper
+    h2
+    .logIn
+      .email
+        input
+        span
+      .passward
+        input
+        span
+        i
+    .forgotMyPassword
+      a
+    .singIn
+      button
+      p
+      a
+  footer
+    .footer
+      .footer-policy
+        a *2
+      .footer-sns
+        a > i*3
+      .footer-button

@@ -1,0 +1,151 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.5em;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+a {
+  text-decoration: none;
+  color: #222;
+}
+.login {
+  text-align: center;
+  width: 500px;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.1);
+}
+.login h1 {
+  font-size: 2em;
+}
+.input-field {
+  position: relative;
+}
+.input-field input {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  margin: 20px 0;
+  font-size: 18px;
+}
+.input-field span,
+.input-field label {
+  position: absolute;
+  color: #222;
+  left: 15px;
+  top: 30px;
+  pointer-events: none;
+  transition: 0.2s;
+}
+/* .input-field label {
+  position: absoulte;
+  right: 
+} */
+.input-field span em {
+  color: red;
+  font-size: 18px;
+  
+}
+.forgetPassword {
+}
+.forgetPassword a {
+  float: right;
+  color: darkblue;
+}
+.forgetPassword a:hover {
+  text-decoration: underline;
+}
+.button-field input {
+  background-color: darkblue;
+  color: #fff;
+  border: none;
+  font-size: 17px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.add-info {
+  margin-top: 20px;
+}
+.add-info a {
+  color: darkblue;
+}
+.add-info a:hover {
+  text-decoration: underline;
+}
+
+/* Input Field */
+.input-field input:focus + span,
+.input-field input:valid + span {
+  top: 8px;
+  /* transform: translateY(-30px); */
+  font-size: 12px;
+  padding: 0 5px;
+  background-color: #fff;
+  color: darkblue;
+  font-weight: bold;
+}
+
+.input-field input:focus {
+  border: 2px solid darkblue;
+}
+
+.input-field span.warning {
+  color: crimson !important;
+  animation: warning 0.3s ease-in-out 2;
+}
+@keyframes warning {
+  0%, 100% {
+    transform: translateX(-5px);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* Custom Checkbox */
+/* .add-info label input[type=checkbox] {} */
+#save-email {
+  display: none;
+}
+/* .add-info label em {} */
+#save-email + em {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin-right: 5px;
+  /* vertical-align: middle;
+  margin-top: -2px; */
+  transform: translateY(4px);
+  background: url(images/icon-checkbox.png) no-repeat;
+  background-position: left;
+}
+#save-email:checked + em {
+  background-position: right;
+}
+#save-email:checked + em + span {
+  color: #1bbe93;
+}
