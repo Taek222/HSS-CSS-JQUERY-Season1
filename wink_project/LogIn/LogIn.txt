@@ -1,28 +1,26 @@
 .container
-  header
-    .heading
-      img
-      button
-  .wrapper
-    h2
-    .logIn
-      .email
-        input
-        span
-      .passward
-        input
-        span
-        i
-    .forgotMyPassword
-      a
-    .singIn
-      button
-      p
-      a
+  .content
+    header
+      .heading
+        h1
+        button
+    section.login
+	    h1
+	    form
+	    	.input-field
+	    		input[type=email], span
+	    	.input-field
+	    		input[type=password], span, label	
+        .forgetPassword
+          a
+	    	.button-field
+	    		input[type=submit], span
+	    	.add-info
+	    		p > a
   footer
-    .footer
+    .footer-inner
       .footer-policy
-        a *2
+        a * 2
       .footer-sns
-        a > i*3
+        (a > i) * 3
       .footer-button
